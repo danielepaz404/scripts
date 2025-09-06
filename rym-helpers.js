@@ -1,14 +1,10 @@
 function getTrackRatingSum() {
     total = 0;
-    trackCount = 0;
-    const trackEls = document.querySelectorAll("[id*=rating_num_z_]");
-    
-    trackEls.forEach(val => {
-        const content = val.textContent;
-        if (isNaN(content)) return;
-        total += Number(content);
-        trackCount++;
+    totalTrackCount = track_ratings?.ratings?.length;
+
+    track_ratings?.ratings?.forEach(rating => {
+        total += rating.rating;
     });
 
-    return (total/trackCount).toFixed(2);
+    return totalTrackCount > 0 ? (total / totalTrackCount).toFixed(2) : 0;
 }
