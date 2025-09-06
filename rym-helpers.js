@@ -6,6 +6,8 @@ function getTrackRatingSum() {
         total += track.rating;
     });
 
-    return totalTrackCount > 0 ? (total / totalTrackCount).toFixed(2) : 0;
+    // for some reason the value range is 0-10 instead of 0-5
+    return totalTrackCount > 0 ? (total / totalTrackCount / 2).toFixed(2) : 0;
 }
+
 
