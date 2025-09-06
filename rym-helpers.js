@@ -3,6 +3,6 @@ function getTrackRatingSum() {
     document.querySelectorAll("[id*=rating_num_z_]").forEach(val => {
         const content = val.textContent;
         if (isNaN(content)) return;
-        total += Number(val.textContent)
-    })
+        total += Number(content);
+    });
 }
